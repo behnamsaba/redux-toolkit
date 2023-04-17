@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import Microblog from './Microblog';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchPosts } from './redux/actionCreators';
+import { useEffect } from 'react';
+import LoadingSpinner from './Loading';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const dispatch = useDispatch();
+    const data = useSelector((data) => data.blog);
+
+    useEffect(() => {
+        dispatch(fetchPosts());
+    }, [dispatch]);
+
+    if (!data || data.status === 'loading') {
+        return <LoadingSpinner />;
+    }
+
+    return (
+        <div className='App'>
+            <Microblog />
+        </div>
+    );
 }
 
 export default App;

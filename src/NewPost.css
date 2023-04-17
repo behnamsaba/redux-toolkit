@@ -1,0 +1,57 @@
+form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+form input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+form input:focus {
+  outline: none;
+  border-color: #333;
+}
+
+form p {
+  color: #f00;
+  margin-bottom: 10px;
+}
+
+form button[type="submit"] {
+  background-color: #0077cc;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+form button[type="submit"]:hover {
+  background-color: #005ea6;
+}
+
+form a {
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 16px;
+  color: #0077cc;
+}
+
+form a:hover {
+  color: #005ea6;
+}
